@@ -3,11 +3,9 @@ import classes from './AmbarResponsiveLogo.scss'
 import MediaQuery from 'react-responsive'
 
 export const AmbarResponsiveLogo = ({mode, version}) => (
-    <div className={classes.ambarResponsiveLogo} title={`Ambar ${mode.toUpperCase()} ${version}`} >
-        <img alt='Logo'
-            src={'owl.svg'} />        
-    </div>)
-
+    <div className={classes.ambarResponsiveLogo}>
+    </div>
+)
 
 AmbarResponsiveLogo.propTypes = {
     mode: React.PropTypes.string.isRequired,

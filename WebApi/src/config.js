@@ -9,7 +9,7 @@ const defaultConfig = {
 	"redisHost": "ambar",
 	"redisPort": "6379",
 	"apiUrl": "http://ambar:8080",
-	"serviceApiUrl": "http://localhost:8081",	
+	"serviceApiUrl": "http://localhost:8081",
 	"rabbitHost": "amqp://ambar",
 	"uiLang": "en",
 	"analyticsToken": "",
@@ -36,7 +36,7 @@ const init = () => {
 	return {
 		...defaultConfig,
 		...receivedConfig,
-		...env		
+		...env
 	}
 }
 

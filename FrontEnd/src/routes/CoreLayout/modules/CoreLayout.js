@@ -18,14 +18,11 @@ export const loadConfig = () => {
                 const urls = stateValueExtractor.getUrls(getState())
                 return getWebApiInfo(urls.ambarWebApiGetInfo())
             })
-            .then(apiInfo => {             
-                const urls = stateValueExtractor.getUrls(getState())   
+            .then(apiInfo => {
+                const urls = stateValueExtractor.getUrls(getState())
 
                 dispatch(changeField('version', apiInfo.version))
-                dispatch(changeField('lang', apiInfo.uiLang))   
-
-                analytics(apiInfo.analyticsToken)
-                analytics().register({ apiUrl: urls.apiHost })
+                dispatch(changeField('lang', 'ru'))
 
             })
             .then(() => dispatch(stopLoadingIndicator()))
@@ -37,8 +34,8 @@ export const loadConfig = () => {
 }
 
 export const setPageTitle = (title) => {
-    return (dispatch, getState) => {        
-        titles.setPageTitle(title)        
+    return (dispatch, getState) => {
+        titles.setPageTitle(title)
     }
 }
 
@@ -85,10 +82,10 @@ export function showInfo(message) {
     }
 }
 
-export function handleError(error, showErrorMessage = false) {    
+export function handleError(error, showErrorMessage = false) {
     if (error.constructor === Response) {
         error = `Response ${error.status} ${error.statusText} at ${error.url}`
-    }    
+    }
     analytics().event('ERROR', { description: error ? error.toString() : 'no info' })
     console.log(error)
 
@@ -128,13 +125,13 @@ const ACTION_HANDLERS = {
     },
     [CLOSE_NOTIFICATION]: (state, action) => {
         return ({ ...state, isNotificationOpen: false })
-    }    
+    }
 }
 
 const initialState = {
     urls: {},
     localizations: {},
-    lang: 'en',
+    lang: 'ru',
     integrations: {},
     mode: 'ce',
     version: '0.0',

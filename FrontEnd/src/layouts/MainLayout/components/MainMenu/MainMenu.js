@@ -65,7 +65,7 @@ export const SideMenu = ({ isOpen, currentLocation, changeLocation, toggleMainMe
           innerDivStyle={innerMenuItemStyle}
           style={menuItemStyle}>
           {localization.mainMenu.statisticsLabel}
-        </MenuItem>       
+        </MenuItem>
       </Menu>
     </IconMenu>
   )

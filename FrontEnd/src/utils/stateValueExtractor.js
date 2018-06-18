@@ -1,12 +1,12 @@
 import urls from './urls.js'
 
-export const getUrls = (state) => state['core'].urls 
+export const getUrls = (state) => state['core'].urls
 export const getLocalization = (state) => {
     const lang = state['core'].lang
-    const defaultLang = 'en'
+    const defaultLang = 'ru'
 
     return state['core'].localizations[lang]
-        ? state['core'].localizations[lang] 
+        ? state['core'].localizations[lang]
         : state['core'].localizations[defaultLang]
 }
 

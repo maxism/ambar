@@ -30,7 +30,7 @@ const HintCard = (props) => {
                 </li>
             <li><span className={classes.clickableSpan} onTouchTap={() => { performSearchByQuery('filename:*.txt') }}>
                 filename:*.txt
-                    </span> - {localization.searchPage.filenameQueryLabel}                
+                    </span> - {localization.searchPage.filenameQueryLabel}
                 </li>
             <li><span className={classes.clickableSpan} onTouchTap={() => { performSearchByQuery('size>1M') }}>
                 size>1M
@@ -49,7 +49,7 @@ const HintCard = (props) => {
                 <span className={classes.clickableSpan} onTouchTap={() => { performSearchByQuery('tags:ocr,ui-upload') }}>
                     tags:ocr,ui-upload
                 </span> - {localization.searchPage.tagsQueryLabel}
-            </li>          
+            </li>
             <li>
                 <span className={classes.clickableSpan} onTouchTap={() => { performSearchByQuery('show:removed') }}>
                     show:removed
@@ -58,14 +58,9 @@ const HintCard = (props) => {
         </ul>
     </div>)
 
-    const emailText = (<p>
-        {localization.searchPage.haveQuestionsLabel}&nbsp;<a className={classes.link} href='mailto:hello@ambar.cloud'>{localization.searchPage.dropMessageLabel}</a>
-    </p>)
-
     const textElement = (<div>
         <p style={{ marginTop: 0 }}>{description}</p>
         {hintText}
-        {emailText}
     </div>)
 
     return (

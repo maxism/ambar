@@ -1,6 +1,5 @@
 import React, { Component, PropTypes } from 'react'
 import MainMenu from './components/MainMenu'
-import RateUs from './components/RateUs'
 import { AmbarResponsiveLogo } from 'components/BasicComponents'
 import AppBarTitle from './components/AppBarTitle'
 import AppBar from 'material-ui/AppBar'
@@ -50,14 +49,11 @@ class MainLayout extends Component {
                             toggleMainMenu={toggleSideMenu}
                             changeLocation={changeLocation}
                             mode={mode}
-                            allowedRoutes={allowedRoutes} 
+                            allowedRoutes={allowedRoutes}
                             auth={auth}
                             localization={localization}
                         />}
                         iconElementLeft={<div style={{ display: 'flex', flexDirection: 'row' }}>
-                            {mode !== 'ee' && <MediaQuery query='(min-width: 1024px)'>
-                                <RateUs isOpen={showRateUsModal} toggle={toggleRateUsModal} />
-                            </MediaQuery>}
                             <AmbarResponsiveLogo version={version} mode={mode} />
                         </div>}
                     />
